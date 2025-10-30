@@ -16,9 +16,7 @@ const Footer = () => {
           <p className="label-small opacity-60">© 2025 Keerthana Vangala</p>
         </div>
         
-        <div className="text-center mt-8">
-          <p className="label-small opacity-50">Built with Emergent AI</p>
-        </div>
+        
       </div>
     </footer>
   );
