@@ -1,0 +1,377 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@layer base {
+  :root {
+    /* Monochromatic Base */
+    --color-background: #F2F2F2;
+    --bg-white: #FFFFFF;
+    --text-primary: #232323;
+    --text-secondary: rgba(35, 35, 35, 0.7);
+    --border-color: #232323;
+    --border-light: rgba(35, 35, 35, 0.1);
+    
+    /* Neon Green Accent System */
+    --accent-primary: #38FF62;
+    --accent-hover: #2AE052;
+    --accent-active: #1DC943;
+    --accent-foreground: #232323;
+    
+    /* Functional Colors */
+    --color-success: #38FF62;
+    --color-error: #FF3838;
+    --color-warning: #FFB838;
+    --color-disabled: rgba(35, 35, 35, 0.3);
+    
+    /* Grid unit */
+    --grid-unit: 47.6px;
+    
+    /* Tailwind Compatibility */
+    --background: #F2F2F2;
+    --foreground: #232323;
+    --card: #FFFFFF;
+    --card-foreground: #232323;
+    --popover: #FFFFFF;
+    --popover-foreground: #232323;
+    --primary: #232323;
+    --primary-foreground: #F2F2F2;
+    --secondary: rgba(35, 35, 35, 0.05);
+    --secondary-foreground: #232323;
+    --muted: rgba(35, 35, 35, 0.05);
+    --muted-foreground: rgba(35, 35, 35, 0.7);
+    --accent: #38FF62;
+    --accent-foreground: #232323;
+    --destructive: #FF3838;
+    --destructive-foreground: #FFFFFF;
+    --border: rgba(35, 35, 35, 0.1);
+    --input: rgba(35, 35, 35, 0.1);
+    --ring: #232323;
+    --radius: 0;
+  }
+  
+  .dark {
+    --color-background: #0f0f10;
+    --bg-white: #1a1a1b;
+    --text-primary: #F2F2F2;
+    --text-secondary: rgba(242, 242, 242, 0.7);
+    --border-color: #F2F2F2;
+    --border-light: rgba(242, 242, 242, 0.1);
+    
+    --background: #0f0f10;
+    --foreground: #F2F2F2;
+    --card: #1a1a1b;
+    --card-foreground: #F2F2F2;
+    --popover: #1a1a1b;
+    --popover-foreground: #F2F2F2;
+    --primary: #F2F2F2;
+    --primary-foreground: #0f0f10;
+    --secondary: rgba(242, 242, 242, 0.1);
+    --secondary-foreground: #F2F2F2;
+    --muted: rgba(242, 242, 242, 0.1);
+    --muted-foreground: rgba(242, 242, 242, 0.7);
+    --border: rgba(242, 242, 242, 0.1);
+    --input: rgba(242, 242, 242, 0.1);
+    --ring: #F2F2F2;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-background);
+  color: var(--text-primary);
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  border-color: var(--border);
+}
+
+code {
+  font-family: 'JetBrains Mono', source-code-pro, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Typography System */
+.hero-title {
+  font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(60px, 15vw, 280px);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.header-logo {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.title-big {
+  font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(40px, 8vw, 150px);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.text-big {
+  font-family: 'Work Sans', ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(32px, 6vw, 84px);
+  font-weight: 400;
+  color: var(--text-primary);
+  line-height: 1.07;
+}
+
+.text-regular {
+  font-family: 'Work Sans', ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(16px, 2.5vw, 30px);
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.text-body {
+  font-family: 'Work Sans', ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(14px, 1.8vw, 18px);
+  font-weight: 400;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.label {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: clamp(10px, 1.5vw, 18px);
+  font-weight: 400;
+  color: var(--text-primary);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.label-small {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: clamp(8px, 1.2vw, 12px);
+  font-weight: 400;
+  color: var(--text-primary);
+  line-height: 1.25;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Component Styles */
+.btn-primary {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 0;
+  padding: 12px 24px;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+.btn-primary:hover {
+  background: rgba(35, 35, 35, 0.05);
+}
+
+.dark .btn-primary:hover {
+  background: rgba(242, 242, 242, 0.05);
+}
+
+.btn-primary:active {
+  background: rgba(35, 35, 35, 0.1);
+}
+
+.btn-accent {
+  background: var(--accent-primary);
+  border: none;
+  border-radius: 0;
+  padding: 12px 24px;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--accent-foreground);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+.btn-accent:hover {
+  background: var(--accent-hover);
+  transform: scale(1.02);
+}
+
+.btn-accent:active {
+  background: var(--accent-active);
+  transform: scale(0.98);
+}
+
+.btn-ghost {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 8px 16px;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+.btn-ghost:hover {
+  opacity: 0.7;
+}
+
+.btn-ghost:active {
+  opacity: 0.5;
+}
+
+.nav-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: 8px 12px;
+  transition: opacity 0.15s ease;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  opacity: 0.7;
+}
+
+.nav-link:active {
+  opacity: 0.5;
+}
+
+.card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 0;
+  padding: 24px;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(35, 35, 35, 0.1);
+}
+
+.dark .card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.grid-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-background);
+  background-image: 
+    linear-gradient(to right, var(--text-primary) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--text-primary) 1px, transparent 1px);
+  background-size: 47.6px 47.6px;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@layer utilities {
+  .container {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+}
+
+/* Mobile Adaptations */
+@media (max-width: 767px) {
+  .hero-title {
+    font-size: 60px;
+  }
+  
+  .title-big {
+    font-size: 44px;
+  }
+  
+  .text-big {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+  
+  .text-regular {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  
+  .label {
+    font-size: 10px;
+  }
+  
+  .header-logo {
+    font-size: 20px;
+  }
+  
+  .btn-primary,
+  .btn-accent {
+    width: 100%;
+    min-height: 52px;
+  }
+}
+
+#emergent-badge,
+.emergent-badge,
+[data-emergent-badge],
+[data-made-with="emergent"],
+a[href*="emergent"][style*="position: fixed"],
+a[aria-label*="Emergent"] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
